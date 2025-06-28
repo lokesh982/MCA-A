@@ -1,0 +1,158 @@
+{% extends 'sems.html' %}
+
+{% block title %}student{% endblock %}
+
+{% block content %}
+<html><head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 50%;
+    flex: 1;
+}
+
+
+
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2.0);
+    width: 300px;
+    flex-shrink: 0;
+    height:200px
+   box-shadow: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333333;
+}
+
+.input-group input[type="text"],
+
+.input-group input[type="submit"],
+{
+    align: center;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.link-group a {
+    text-align: center;
+    font-size: 13px;
+}
+
+.secondary-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.green-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+.green-btn:hover {
+    background-color: #218838;
+}
+
+.secondary-btn:hover {
+    background-color: #e2e6ea;
+}
+
+.message {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.message.error { color: red; }
+.message.success { color: green; }
+</style>
+</head>
+
+<body bgcolor="#0066AG" >
+<div class="container">
+<h1 align="center"> Student Details</h1>
+
+<form method="POST" action="/myapp/insert_employee/" >
+<input type="hidden" name="csrfmiddlewaretoken" value="27V2XozncEguBH66RqaWhwTZPlICUjFubCJ13nRhMOweSarRXYL8shSCLkmq1Ahp"><!-- Security token -->
+<p>
+<label for="id_first_name">Name:</label>
+<input type="text" name="name" maxlength="30" required id="id_first_name">
+</p>
+
+<p>
+<label for="rollno">Roll No:</label>
+<input type="text" name="RollNo" maxlength="30" required id="id_first_name">
+</p>
+
+
+
+
+<p>
+<label for="id_last_name">Course:</label>
+<input type="text" name="course" maxlength="30" required id="id_last_name">
+</p>
+
+<p>
+<label for="id_mobile">Mobile:</label>
+<input type="text" name="mobile" maxlength="10" required id="id_mobile">
+</p>
+
+<p>
+<label for="id_email">Email:</label>
+<input type="email" name="email" maxlength="254" required id="id_email">
+</p><!-- Using the formset -->
+<input type="submit" value="Submit">
+</form>
+
+
+</div>
+
+<link rel="stylesheet" href="mystyle1.css">
+<a href="{% url 'sems' %}">
+Exit
+</a>
+
+{% endblock %}
+</body>
+</html>

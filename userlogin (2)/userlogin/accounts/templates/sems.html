@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Header{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+   
+</head>
+<body style="background-image: url('{% static 'img/college.png' %}'); background-size: cover; background-repeat: no-repeat;">
+<header>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <img src="{% static 'img/logo.png' %}" alt="MTICA College Logo" style="height: 100px;">
+
+        <div style="text-align: center; flex-grow: 1;">
+            <h1 style="font-size: 28px; font-weight: bold; color:red; margin: 0;">Mother Theresa Institution of Engineering and Technologies</h1>
+            <h3 style="font-size: 15px; font-weight: bold; margin: 0;">Melumoi, Palamaner-517408</h3>
+        </div>
+
+        <a href="{% url 'logout' %}" style="padding: 10px 15px; background-color: red; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Logout</a>
+    </div>
+
+
+
+    <div class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">MASTER</button>
+            <div class="dropdown-content">
+                <a href="{% url 'addstudent' %}">AddStudent</a>
+                <a href="{% url 'viewstudent' %}">ViewStudent</a>
+                <a href="{% url 'updatestudent' %}">UpdateStudent</a>
+                <a href="{% url 'deletestudent' %}">DeleteStudent</a>
+                
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">TRANSACTIONS</button>
+            <div class="dropdown-content">
+                
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">REPORT</button>
+            <div class="dropdown-content">
+               
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">RESTORE & BACKUP</button>
+            <div class="dropdown-content">
+                
+            </div>
+        </div>
+ <div class="dropdown">
+           
+            <a href="{% url 'sems' %}">
+EXIT</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    {% block content %}
+
+{% endblock %}
+
+</main>
+
+
+
+</body>
+</html>

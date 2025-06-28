@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="main-wrapper">
+<div class="container">
+    <h2>Login</h2>
+   
+    {% for message in messages %}
+      <div class="message {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+     
+
+      <img src="{% static 'img/clg.png' %}"  height=120px width=80px align=left />
+    <h1 align="center">Mother Theresa Institutes Of Engineering and Technologies</h1><br /> 
+   <h1 align="center">Student Attendence Monitoring System</h1>
+
+
+   
+        
+      <br />    <form method="POST" class="login-form">
+      {% csrf_token %}
+      <div class="input-group">
+        <input type="text" name="username" placeholder="Username" required>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Password" required>
+      </div>
+
+      <div class="button-group">
+        <input type="submit" value="Login" class="secondary-btn green-btn">
+        <input type="reset" value="Clear" class="secondary-btn">
+        <button type="button" onclick="window.close();" class="secondary-btn">Exit</button>
+      </div>
+
+      <div class="button-group link-group">
+        <a href="{% url 'register' %}" class="secondary-btn">New User? Register</a>
+        <a href="{% url 'change_password' %}" class="secondary-btn">Change Password</a>
+        <a href="{% url 'forgot_password' %}" class="secondary-btn">Forgot Password</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+
+

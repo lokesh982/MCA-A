@@ -1,0 +1,33 @@
+{% extends 'sems.html' %}
+
+{% block title %}student{% endblock %}
+
+{% block content %}
+<html>
+<body bgcolor="lightblue">
+<h1  Style="border:2px solid tomato" align=center> Student Details</h1>
+
+
+<div class="input-group">
+        <input type="text" name="username" placeholder="Username" required>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Password" required>
+      </div>
+
+      <div class="button-group">
+        <input type="submit" value="Login" class="secondary-btn green-btn">
+        <input type="reset" value="Clear" class="secondary-btn">
+        <button type="button" onclick="window.close();" class="secondary-btn">Exit</button>
+      </div>
+
+
+<link rel="stylesheet" href="mystyle1.css">
+<a href="{% url 'sems' %}">
+Exit
+</a>
+
+{% endblock %}
+</body>
+</html>
